@@ -743,20 +743,51 @@ input {
 // 11.  #Social Icons
 // -----------------------------
 
-// Item Link
-.social-link {
-    .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
-    &:hover {
-        color: darken(@color__primary,10%);
-        text-decoration: none;
+// Social Icons in main Body
+// -----------------------------
+
+.template-content {
+    // Item Link
+    .social-link {
+        .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+        color: @color__socialicons--icon;
+        &:hover {
+            color: @color__socialicons--icon--hover;
+            text-decoration: none;
+        }
+    }
+
+    // Hide Social name
+    .social-name {
+        display: none;
     }
 }
 
-// Hide Social name
-.social-name {
-    display: none;
-}
 
+
+
+// Footer Social Icons
+// -----------------------------
+
+.template-footer {
+    .social-link {
+        margin-right: 20px;
+        color: @color__h1--text;
+        text-transform: uppercase;
+        font-size: bkscale(@font__p--font-size,0.9);
+
+        .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+
+        &:hover {
+            color: @color-swatch2;
+            text-decoration: none;
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+}
 
 
 
@@ -858,7 +889,7 @@ blockquote:after {
 
 hr,
 hr.rule {
-    background-color: #E2E2E2;
+    background-color: darken(@color__body--background,12%);
     width: 80%;
     height: 1px;
     display: block;
